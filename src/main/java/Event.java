@@ -1,7 +1,5 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Event {
@@ -12,8 +10,20 @@ public class Event {
     private Integer pre_event;
     private Integer next_event;
 
+//    @OneToMany
+//    @JoinColumn(name="eventId")
+//    private List<EventInstance> eventInstances;
 
     private String what;
+
+//    public List<EventInstance> getEventInstances() {
+//        return eventInstances;
+//    }
+//
+//    public void setEventInstances(List<EventInstance> eventInstances) {
+//        this.eventInstances = eventInstances;
+//    }
+
     public Integer getId() {
         return id;
     }

@@ -17,6 +17,8 @@
         <mapping class="Event"/>
         <mapping class="User"/>
         <mapping class="Designer"/>
+        <mapping class="WorkflowInstance"/>
+        <mapping class="EventInstance"/>
     </session-factory>
 
 </hibernate-configuration>

@@ -18,6 +18,8 @@ public class Main {
         Session session=factory.openSession();
         Transaction t=session.beginTransaction();
 
+
+
         Event e1 = new Event();
         e1.setPre_event(0);
         e1.setNext_event(2);
@@ -51,14 +53,14 @@ public class Main {
         user1.setName("Samarth");
         user1.setPasswd("s");
         user1.setRole("Clerk");
-        user1.setEvents(doneByUser1);
+        //user1.setEvents(doneByUser1);
 
 
         User user2 = new User();
         user2.setName("Parul");
         user2.setPasswd("p");
         user2.setRole("Admin");
-        user2.setEvents(doneByUser2);
+        //user2.setEvents(doneByUser2);
 
         ArrayList<User> l=new ArrayList<User>();
         l.add(user1);
@@ -74,13 +76,14 @@ public class Main {
         workflow1.setNumber_of_events(3);
         workflow1.setName("Loan Application");
         workflow1.setEvents(list1);
-        workflow1.setUsers(l);
+
+        //workflow1.setUsers(l);
 
         Workflow workflow2 = new Workflow();
         workflow2.setNumber_of_events(1);
         workflow2.setName("Approval process");
         workflow2.setEvents(list2);
-        workflow2.setUsers(l2);
+        //workflow2.setUsers(l2);
 
         managedByDesigner1.add(workflow1);
         managedByDesigner1.add(workflow2);
@@ -90,6 +93,22 @@ public class Main {
         designer.setPasswd("abcd");
         designer.setWorkflow(managedByDesigner1);
 
+        // Instantiation code.
+        EventInstance ev1 = new EventInstance();
+        ev1.setEvent(e1);
+        ev1.setUser(user1);
+
+        EventInstance ev2 = new EventInstance();
+        ev2.setEvent(e2);
+        ev2.setUser(user2);
+
+        WorkflowInstance workflowInstance1 = new WorkflowInstance();
+        workflowInstance1.setWorkflow(workflow1);
+        workflowInstance1.setUsers(user1);
+
+        ev1.setWorkflowInstance(workflowInstance1);
+        ev2.setWorkflowInstance(workflowInstance1);
+
         session.persist(workflow1);
         session.persist(workflow2);
         session.persist(designer);
@@ -98,6 +117,9 @@ public class Main {
         session.persist(e3);
         session.persist(user1);
         session.persist(user2);
+        session.persist(workflowInstance1);
+        session.persist(ev1);
+        session.persist(ev2);
         t.commit();
         session.close();
         System.out.println("success");

@@ -10,28 +10,45 @@ public class User {
     private String name;
     private String passwd;
     private String role;
-    @ManyToMany(mappedBy = "users")
-    private List<Workflow> workflows;
+    //@ManyToMany(mappedBy = "users")
+    //private List<Workflow> workflows;
 
-    @OneToMany
-    @JoinColumn(name="User_id")
-    private List<Event> events;
+//    @OneToMany
+//    @JoinColumn(name="User_id")
+//    private List<Event> events;
 
-    public List<Event> getEvents() {
-        return events;
-    }
+//    @OneToMany
+//    @JoinColumn(name="User_id")
+//    private List<WorkflowInstance> workflowInstance;
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
+//    @OneToMany
+//    @JoinColumn(name="User_id")
+//    private List<EventInstance> eventInstances ;
+//
+//    public List<EventInstance> getEventInstances() {
+//        return eventInstances;
+//    }
+//
+//    public void setEventInstances(List<EventInstance> eventInstances) {
+//        this.eventInstances = eventInstances;
+//    }
 
-    public List<Workflow> getWorkflows() {
-        return workflows;
-    }
+//    public List<WorkflowInstance> getWorkflowInstance() {
+//        return workflowInstance;
+//    }
+//
+//    public void setWorkflowInstance(List<WorkflowInstance> workflowInstance) {
+//        this.workflowInstance = workflowInstance;
+//    }
 
-    public void setWorkflows(List<Workflow> workflows) {
-        this.workflows = workflows;
-    }
+//    public List<Event> getEvents() {
+//        return events;
+//    }
+//
+//    public void setEvents(List<Event> events) {
+//        this.events = events;
+//    }
+
 
     public Integer getId() {
         return id;

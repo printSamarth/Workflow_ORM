@@ -13,11 +13,24 @@ public class Workflow {
     @JoinColumn(name="wid")
     private List<Event> events;
 
-    @ManyToMany(cascade=CascadeType.ALL)
-    @JoinTable(name="Workflow_User", joinColumns={@JoinColumn(referencedColumnName="id")},inverseJoinColumns={@JoinColumn(referencedColumnName="id")})
-    private List<User> users;
+//    @OneToMany
+//    @JoinColumn(name="wid")
+//    private List<WorkflowInstance> workflowInstances;
+
+    //@ManyToMany(cascade=CascadeType.ALL)
+    //@JoinTable(name="Workflow_User", joinColumns={@JoinColumn(referencedColumnName="id")},inverseJoinColumns={@JoinColumn(referencedColumnName="id")})
+    //private List<User> users;
     private Integer number_of_events;
+
     public Workflow(){}
+
+//    public List<WorkflowInstance> getWorkflowInstances() {
+//        return workflowInstances;
+//    }
+//
+//    public void setWorkflowInstances(List<WorkflowInstance> workflowInstances) {
+//        this.workflowInstances = workflowInstances;
+//    }
 
     public String getName() {
         return name;
@@ -35,13 +48,6 @@ public class Workflow {
         this.id = id;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
     public Integer getNumber_of_events() {
         return number_of_events;
