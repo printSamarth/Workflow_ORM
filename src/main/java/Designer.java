@@ -9,9 +9,9 @@ public class Designer {
     private String name;
     private String passwd;
 
-    @OneToMany
-    @JoinColumn(name="designer_id")
-    private List<Workflow> workflow;
+//    @OneToMany
+//    @JoinColumn(name="designer_id")
+//    private List<Workflow> workflow;
 
     public Integer getId() {
         return id;
@@ -37,11 +37,11 @@ public class Designer {
         this.passwd = passwd;
     }
 
-    public List<Workflow> getWorkflow() {
-        return workflow;
-    }
-
-    public void setWorkflow(List<Workflow> workflow) {
-        this.workflow = workflow;
-    }
+//    public List<Workflow> getWorkflow() {
+//        return workflow;
+//    }
+//
+//    public void setWorkflow(List<Workflow> workflow) {
+//        this.workflow = workflow;
+//    }
 }

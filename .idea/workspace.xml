@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0eec6f3e-55af-4b6d-b631-ad63bf6c36d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Designer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Designer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WorkflowInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WorkflowInstance.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +84,8 @@
       <workItem from="1616481178548" duration="100000" />
       <workItem from="1616580630514" duration="614000" />
       <workItem from="1616586202079" duration="767000" />
-      <workItem from="1616672446709" duration="4139000" />
+      <workItem from="1616672446709" duration="4783000" />
+      <workItem from="1617096847950" duration="1754000" />
     </task>
     <servers />
   </component>

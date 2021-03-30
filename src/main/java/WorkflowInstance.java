@@ -9,7 +9,7 @@ public class WorkflowInstance {
     private Integer id;
 
     @ManyToOne
-    private User users;
+    private User user;
 
     @ManyToOne
     private Workflow workflow;
@@ -28,11 +28,11 @@ public class WorkflowInstance {
     }
 
     public User getUsers() {
-        return users;
+        return user;
     }
 
     public void setUsers(User users) {
-        this.users = users;
+        this.user = users;
     }
 
     public Integer getId() {

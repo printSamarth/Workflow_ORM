@@ -18,9 +18,75 @@ public class Main {
         Session session=factory.openSession();
         Transaction t=session.beginTransaction();
 
+        //Create designer.
+        Designer designer1 = new Designer();
+        designer1.setName("Samarth");
+        designer1.setPasswd("abcd");
 
+        //Create users.
+        User user1 = new User();
+        user1.setPasswd("abcd");
+        user1.setName("User1");
+        user1.setRole("Admin");
 
+        User user2 = new User();
+        user2.setPasswd("abcd");
+        user2.setName("User2");
+        user2.setRole("Manager");
+
+        //Designer will design workflow.
+        Workflow workflow1 = new Workflow();
+        workflow1.setName("Loan Application");
+        workflow1.setNumber_of_events(3);
+        workflow1.setDesigner(designer1);
+
+        //Create events.
         Event e1 = new Event();
+        e1.setPre_event(-1);
+        e1.setNext_event(2);
+        e1.setWhat("Review");
+        e1.setWorkflow(workflow1);
+
+        Event e2 = new Event();
+        e2.setWhat("Approve/Reject");
+        e2.setNext_event(-1);
+        e2.setPre_event(2);
+        e2.setWorkflow(workflow1);
+
+
+
+
+        //User will instantiate the workflow.
+        WorkflowInstance workflowInstance1 = new WorkflowInstance();
+        workflowInstance1.setUsers(user1);
+        workflowInstance1.setWorkflow(workflow1);
+
+        //Create event instance.
+        EventInstance eventInstance1 = new EventInstance();
+        eventInstance1.setWorkflowInstance(workflowInstance1);
+        eventInstance1.setUser(user2);
+        eventInstance1.setEvent(e1);
+
+        EventInstance eventInstance2 = new EventInstance();
+        eventInstance2.setWorkflowInstance(workflowInstance1);
+        eventInstance2.setUser(user1);
+        eventInstance2.setEvent(e2);
+
+        session.persist(workflow1);
+
+        session.persist(designer1);
+        session.persist(e1);
+        session.persist(e2);
+        session.persist(user1);
+        session.persist(user2);
+        session.persist(workflowInstance1);
+        session.persist(eventInstance1);
+        session.persist(eventInstance2);
+        t.commit();
+        session.close();
+
+
+        /*Event e1 = new Event();
         e1.setPre_event(0);
         e1.setNext_event(2);
         e1.setWhat("Approve");
@@ -121,7 +187,7 @@ public class Main {
         session.persist(ev1);
         session.persist(ev2);
         t.commit();
-        session.close();
+        session.close();*/
         System.out.println("success");
     }
 }

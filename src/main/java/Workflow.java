@@ -9,10 +9,13 @@ public class Workflow {
     private Integer id;
     private String name;
 
-    @OneToMany
-    @JoinColumn(name="wid")
-    private List<Event> events;
+//    @OneToMany
+//    @JoinColumn(name="wid")
+//    private List<Event> events;
 
+    @ManyToOne
+    @JoinColumn(name="designer_id")
+    private Designer designer;
 //    @OneToMany
 //    @JoinColumn(name="wid")
 //    private List<WorkflowInstance> workflowInstances;
@@ -57,11 +60,19 @@ public class Workflow {
         this.number_of_events = number_of_events;
     }
 
-    public List<Event> getEvents() {
-        return events;
+//    public List<Event> getEvents() {
+//        return events;
+//    }
+//
+//    public void setEvents(List<Event> events) {
+//        this.events = events;
+//    }
+
+    public Designer getDesigner() {
+        return designer;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
+    public void setDesigner(Designer designer) {
+        this.designer = designer;
     }
 }

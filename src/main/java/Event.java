@@ -13,6 +13,8 @@ public class Event {
 //    @OneToMany
 //    @JoinColumn(name="eventId")
 //    private List<EventInstance> eventInstances;
+    @ManyToOne
+    private Workflow workflow;
 
     private String what;
 
@@ -56,4 +58,11 @@ public class Event {
         this.next_event = next_event;
     }
 
+    public Workflow getWorkflow() {
+        return workflow;
+    }
+
+    public void setWorkflow(Workflow workflow) {
+        this.workflow = workflow;
+    }
 }
